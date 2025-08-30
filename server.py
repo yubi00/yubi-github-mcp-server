@@ -31,6 +31,8 @@ if not GITHUB_TOKEN:
 # GitHub client (PyGithub)
 gh = Github(GITHUB_TOKEN)
 
+PORT = os.getenv("PORT", 8000)
+
 # -----------------------------
 # MCP server (FastMCP)
 # -----------------------------
@@ -46,7 +48,7 @@ mcp = FastMCP(
         "Authentication is handled via GITHUB_TOKEN environment variable."
     ),
     host="0.0.0.0",
-    port=8000,
+    port=PORT,
 )
 
 # -----------------------------
