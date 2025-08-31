@@ -307,6 +307,7 @@ def get_repository_contents(
 if __name__ == "__main__":
     if os.getenv("NODE_ENV") == "production":
         logger.info("Running in production mode, starting HTTP server...")
+        mcp.settings.stateless_http = True
         mcp.run(transport="streamable-http")
     else:
         logger.info("Running in development mode, starting stdio server...")
